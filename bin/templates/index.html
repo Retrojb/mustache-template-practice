@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
+{{>header}}
 
-<title>Index Mustache Test Page</title>
-</head>
-
-<body>
 <h1>This is a test page for Mustache templates</h1>
 
 <div>Hello World</div>
 
+<form action="/login" method="post">
+	<label for="username">Username:</label>
+	<input type="text" name="username"  />
+	
+	<label for="password">Password:</label>
+	<input type="text" name="password"  />
 
-</body>
+	<button type="submit" class="btn btn-primary">Submit</button>
+	
+</form>
 
-
-</html>
+{{>footer}}
