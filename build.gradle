@@ -34,4 +34,7 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+compile group: 'org.springframework.security', name: 'spring-security-config', version: '3.2.0.RELEASE'
+	
 }
