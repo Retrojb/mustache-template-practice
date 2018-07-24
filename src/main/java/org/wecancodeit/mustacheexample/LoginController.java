@@ -32,18 +32,18 @@ public class LoginController {
 	      map.get("username"), "N/A",
 	      AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
 	  SecurityContextHolder.getContext().setAuthentication(result);
+	
+	}
+	private AuthenticationSuccessHandler handler = new SavedRequestAwareAuthenticationSuccessHandler();
+
+	@PostMapping
+	public void authenticate(@RequestParam Map<String, String> map,
+	    HttpServletRequest request, HttpServletResponse response) throws Exception {
+	  
+	// ... authenticate user from request parameters
+	  handler.onAuthenticationSuccess(request, response, result);
 	}
 	
-//	private AuthenticationSuccessHandler handler = new SavedRequestAwareAuthenticationSuccessHandler();
-//
-//	@PostMapping
-//	public void authenticate(@RequestParam Map<String, String> map,
-//	    HttpServletRequest request, HttpServletResponse response) throws Exception {
-//	  
-//	// ... authenticate user from request parameters
-//	  handler.onAuthenticationSuccess(request, response, result);
-//	}
-//	
 
 
 }
